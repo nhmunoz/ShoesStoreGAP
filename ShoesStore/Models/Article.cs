@@ -26,6 +26,6 @@ namespace ShoesStore.Models
         public int StoreId { get; set; }
 
         [Display(Name = "Store")]
-        public Store Store { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

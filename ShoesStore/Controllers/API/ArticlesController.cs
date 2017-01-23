@@ -30,7 +30,8 @@ namespace ShoesStore.Controllers.API
                 {
                     foreach (Article article in articles)
                     {
-                        list.Add(new ArticleViewModel { id = article.Id, name = article.Name, description = article.Description, price = article.Price, total_in_shelf = article.total_in_shelf, total_in_vault = article.total_in_vault, store_name = db.Stores.Find(article.StoreId).Name });
+                        var store = article.Store;
+                        list.Add(new ArticleViewModel { id = article.Id, name = article.Name, description = article.Description, price = article.Price, total_in_shelf = article.total_in_shelf, total_in_vault = article.total_in_vault, store_name = store.Name });
                     }
                 }
 
@@ -73,7 +74,8 @@ namespace ShoesStore.Controllers.API
                         List<ArticleViewModel> list = new List<ArticleViewModel>();
                         foreach (Article article in articles)
                         {
-                            list.Add(new ArticleViewModel { id = article.Id, name = article.Name, description = article.Description, price = article.Price, total_in_shelf = article.total_in_shelf, total_in_vault = article.total_in_vault, store_name = db.Stores.Find(article.StoreId).Name });
+                            var store = article.Store;
+                            list.Add(new ArticleViewModel { id = article.Id, name = article.Name, description = article.Description, price = article.Price, total_in_shelf = article.total_in_shelf, total_in_vault = article.total_in_vault, store_name = store.Name });
                         }
                         var jsonResponse = new
                         {
